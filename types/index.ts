@@ -187,3 +187,25 @@ export interface BadgeParams {
 
   disable_particles?: boolean;
 }
+
+export interface GraphNode {
+  id: string;
+  name: string;
+  type: 'User' | 'Repo' | 'Contribution' | 'Fork';
+  val: number;
+  color: string;
+  stats?: {
+    stars?: number;
+    forks?: number;
+    language?: string | null;
+    updatedAt?: string;
+    description?: string | null;
+  };
+  x?: number;
+  y?: number;
+}
+
+export interface GraphLink {
+  source: string | GraphNode;
+  target: string | GraphNode;
+}
